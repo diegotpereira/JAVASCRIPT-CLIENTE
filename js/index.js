@@ -1,8 +1,8 @@
 campos = [
     document.querySelector('#data'),
     document.querySelector('#quantidade'),
-    document.querySelector('#valor')
-    // document.querySelector('#desconto')
+    document.querySelector('#valor'),
+    document.querySelector('#desconto')
 ]
 
 console.log(campos)
@@ -30,9 +30,10 @@ document.querySelector('.form').addEventListener('submit', function(event) {
     tr.appendChild(tdVolume)
 
     // Variavel desconto
-    // var tdValorTotal = document.createElement('td')
-    // tdValorTotal.textContent = parseFloat(campos[3].value * ('.tbody td').eq(3).text()) / 100
-    // tr.appendChild(tdValorTotal)
+    var desc = document.getElementById("desconto").value
+    var tdValorTotal = document.createElement('td')
+    tdValorTotal.textContent = campos[3].value * parseFloat(desc) / 100
+    tr.appendChild(tdValorTotal)
 
     tbody.appendChild(tr)
 
